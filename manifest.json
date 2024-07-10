@@ -2,11 +2,11 @@
     "manifest_version": 3,
     "name": "Internshala Autofill",
     "version": "1.0",
-    "description": "Autofills cover letters on Internshala based on the internship role.",
-    "permissions": ["activeTab", "storage"],
-    "background": {
-      "service_worker": "background.js"
-    },
+    "description": "Autofill cover letters for Internshala internships.",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
@@ -19,6 +19,12 @@
       {
         "matches": ["*://*.internshala.com/*"],
         "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["cover_letters.js"],
+        "matches": ["*://*.internshala.com/*"]
       }
     ]
   }

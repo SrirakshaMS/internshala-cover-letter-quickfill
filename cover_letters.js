@@ -1,8 +1,10 @@
 const coverLetters = {
-    'Web Development': 'Dear Hiring Manager, I am excited to apply for the Web Development internship...',
-    'Machine Learning': 'Dear Hiring Manager, I am excited to apply for the Machine Learning internship...',
-    'Flutter Development': 'Dear Hiring Manager, I am excited to apply for the Flutter Development internship...',
-    'Software Development': 'Dear Hiring Manager, I am excited to apply for the Software Development internship...'
+    webDevelopment: "<p>hi i am applying for web dev...</p>",
+    machineLearning: "<p>Your machine learning cover letter content here...</p>",
+    flutterDevelopment: "<p>Your flutter development cover letter content here...</p>",
+    softwareDevelopment: "<p>Your software development cover letter content here...</p>"
     // Add more cover letters as needed
   };
+  
+  export default coverLetters;
   
