@@ -1,36 +1,29 @@
 {
-    "manifest_version": 3,
-    "name": "Internshala Autofill",
-    "version": "1.0",
-    "description": "Autofill cover letters for Internshala internships.",
-    "permissions": [
-      "activeTab",
-      "scripting"
-    ],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icons/picture16.jpg",
-        "48": "icons/picture48.jpg",
-        "128": "icons/picture128.jpg"
-      }
-    },
-    "icons": {
-    "16": "icons/picture16.jpg",
-    "48": "icons/picture48.jpg",
-    "128": "icons/picture128.jpg"
+  "manifest_version": 3,
+  "name": "Internshala Autofill",
+  "version": "1.0",
+  "description": "Autofill cover letters for Internshala internships.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/picture128.png"
   },
-    "content_scripts": [
-      {
-        "matches": ["*://*.internshala.com/*"],
-        "js": ["content.js"]
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": ["icons/picture128.jpg", "cover_letters.js"],
-        "matches": ["*://*.internshala.com/*"]
-      }
-    ]
-  }
-  
+  "icons": {
+    "128": "icons/picture128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.internshala.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["cover_letters.js"],
+      "matches": ["*://*.internshala.com/*"]
+    }
+  ]
+}
