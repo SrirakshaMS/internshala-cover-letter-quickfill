@@ -10,11 +10,16 @@
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
-        "16": "icons/icon16.jpg",
-        "48": "icons/icon48.jpg",
-        "128": "icons/icon128.jpg"
+        "16": "icons/picture16.jpg",
+        "48": "icons/picture48.jpg",
+        "128": "icons/picture128.jpg"
       }
     },
+    "icons": {
+    "16": "icons/picture16.jpg",
+    "48": "icons/picture48.jpg",
+    "128": "icons/picture128.jpg"
+  },
     "content_scripts": [
       {
         "matches": ["*://*.internshala.com/*"],
@@ -23,7 +28,7 @@
     ],
     "web_accessible_resources": [
       {
-        "resources": ["cover_letters.js"],
+        "resources": ["icons/picture128.jpg", "cover_letters.js"],
         "matches": ["*://*.internshala.com/*"]
       }
     ]
