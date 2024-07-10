@@ -1,16 +1,35 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'autofill') {
-      const coverLetterElement = document.querySelector('textarea#coverLetter'); // Change this selector as per the actual DOM structure
+      // Try to identify the role from the page
+      const roleElement = document.querySelector('h3.job-internship-name');
+      let role = roleElement ? roleElement.textContent.trim() : null;
   
-      if (coverLetterElement) {
-        const role = document.querySelector('input#role').value; // Change this selector as per the actual DOM structure
-        chrome.storage.local.get([role], (result) => {
-          if (result[role]) {
-            coverLetterElement.value = result[role];
-          } else {
-            chrome.runtime.sendMessage({ action: 'showPopup' });
-          }
-        });
+      // If the role is found, fetch the appropriate cover letter
+      if (role) {
+        fetch(chrome.runtime.getURL('cover_letters.js'))
+          .then(response => response.text())
+          .then(scriptText => {
+            eval(scriptText); // Load the coverLetters object
+            if (coverLetters[role]) {
+              // Autofill the cover letter
+              const coverLetterElement = document.querySelector('#cover_letter');
+              const coverLetterVisibleElement = document.querySelector('.ql-editor[contenteditable="true"]');
+              if (coverLetterElement) {
+                coverLetterElement.value = coverLetters[role];
+                // Trigger input event to ensure any form validation is updated
+                coverLetterElement.dispatchEvent(new Event('input'));
+              }
+              if (coverLetterVisibleElement) {
+                coverLetterVisibleElement.innerHTML = coverLetters[role];
+              }
+            } else {
+              // If no matching cover letter, show the popup
+              chrome.runtime.sendMessage({ action: 'showPopup' });
+            }
+          });
+      } else {
+        // If role not found, show the popup
+        chrome.runtime.sendMessage({ action: 'showPopup' });
       }
     }
   });

@@ -6,7 +6,3 @@ const coverLetters = {
     // Add more cover letters as needed
   };
   
-  chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.local.set(coverLetters);
-  });
-  
