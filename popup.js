@@ -106,7 +106,7 @@ function generateCoverLetterFromGemini(role) {
   console.log('Sending request to Gemini API with prompt:', prompt);
 
   // Make the API request
-  fetch('https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyAPPni_3REHysENs34WzgEY7IOrTLDRu20', {
+  fetch('https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=YOUR_API_KEY', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
