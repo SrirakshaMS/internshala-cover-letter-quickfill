@@ -8,13 +8,16 @@
   <h3>Select a Cover Letter</h3>
   <select id="coverLetterSelect">
     <option value="">--Select a Role--</option>
-    <option value="webDevelopment">Web Development</option>
-    <option value="machineLearning">Machine Learning</option>
-    <option value="flutterDevelopment">Flutter Development</option>
-    <option value="softwareDevelopment">Software Development</option>
+    <option value="web_development">Web Development</option>
+    <option value="machine_learning">Machine Learning</option>
+    <option value="flutter_development">Flutter Development</option>
+    <option value="software_development">Software Development</option>
     <!-- Add more options as needed -->
   </select>
-  <button id="applyButton">Apply</button>
+  <button id="usePrecodedButton">Use Pre-coded Content</button>
+  <button id="generateButton">Generate from Gemini</button>
+  <div id="coverLetterOutput"></div>
+  <button id="copyButton" style="display:none;">Copy to Clipboard</button>
   <script src="popup.js"></script>
 </body>
 </html>

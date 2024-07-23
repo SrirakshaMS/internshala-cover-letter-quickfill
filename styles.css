@@ -1,16 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 10px;
-    width: 200px;
-  }
-  
-  h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  select, button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
+/* styles.css */
+button {
+  display: block;
+  margin: 5px 0;
+}
+
+#coverLetterOutput {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: auto;
+}

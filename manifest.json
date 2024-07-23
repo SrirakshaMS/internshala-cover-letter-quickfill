@@ -5,7 +5,11 @@
   "description": "Autofill cover letters for Internshala internships.",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.openai.com/"
   ],
   "action": {
     "default_popup": "popup.html",
